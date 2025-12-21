@@ -1,0 +1,610 @@
+[
+    {
+        "team": "ANA",
+        "total": 3,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "PIT",
+                "homeGame": true
+            },
+            {
+                "day": "Thursday",
+                "opponent": "CAR",
+                "homeGame": true
+            },
+            {
+                "day": "Sunday",
+                "opponent": "CHI",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "BOS",
+        "total": 3,
+        "games": [
+            {
+                "day": "Thursday",
+                "opponent": "VGK",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "COL",
+                "homeGame": false
+            },
+            {
+                "day": "Sunday",
+                "opponent": "UTA",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "BUF",
+        "total": 3,
+        "games": [
+            {
+                "day": "Wednesday",
+                "opponent": "OTT",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "FLA",
+                "homeGame": true
+            },
+            {
+                "day": "Monday",
+                "opponent": "MTL",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "CGY",
+        "total": 4,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "VGK",
+                "homeGame": true
+            },
+            {
+                "day": "Wednesday",
+                "opponent": "UTA",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "VGK",
+                "homeGame": false
+            },
+            {
+                "day": "Monday",
+                "opponent": "WPG",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "CAR",
+        "total": 4,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "SJS",
+                "homeGame": false
+            },
+            {
+                "day": "Thursday",
+                "opponent": "ANA",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "LAK",
+                "homeGame": false
+            },
+            {
+                "day": "Monday",
+                "opponent": "VGK",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "CHI",
+        "total": 3,
+        "games": [
+            {
+                "day": "Wednesday",
+                "opponent": "STL",
+                "homeGame": false
+            },
+            {
+                "day": "Friday",
+                "opponent": "VAN",
+                "homeGame": true
+            },
+            {
+                "day": "Sunday",
+                "opponent": "ANA",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "COL",
+        "total": 2,
+        "games": [
+            {
+                "day": "Thursday",
+                "opponent": "CBJ",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "BOS",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "CBJ",
+        "total": 2,
+        "games": [
+            {
+                "day": "Thursday",
+                "opponent": "COL",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "TBL",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "DAL",
+        "total": 3,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "MIN",
+                "homeGame": true
+            },
+            {
+                "day": "Thursday",
+                "opponent": "VAN",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "STL",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "DET",
+        "total": 3,
+        "games": [
+            {
+                "day": "Wednesday",
+                "opponent": "FLA",
+                "homeGame": true
+            },
+            {
+                "day": "Friday",
+                "opponent": "TBL",
+                "homeGame": true
+            },
+            {
+                "day": "Sunday",
+                "opponent": "EDM",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "EDM",
+        "total": 4,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "NYR",
+                "homeGame": false
+            },
+            {
+                "day": "Thursday",
+                "opponent": "NYI",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "NJD",
+                "homeGame": false
+            },
+            {
+                "day": "Sunday",
+                "opponent": "DET",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "FLA",
+        "total": 3,
+        "games": [
+            {
+                "day": "Wednesday",
+                "opponent": "DET",
+                "homeGame": false
+            },
+            {
+                "day": "Thursday",
+                "opponent": "NJD",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "BUF",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "MIN",
+        "total": 4,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "DAL",
+                "homeGame": false
+            },
+            {
+                "day": "Friday",
+                "opponent": "WSH",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "PHI",
+                "homeGame": false
+            },
+            {
+                "day": "Monday",
+                "opponent": "NYR",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "MTL",
+        "total": 4,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "SEA",
+                "homeGame": true
+            },
+            {
+                "day": "Thursday",
+                "opponent": "NSH",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "NYR",
+                "homeGame": true
+            },
+            {
+                "day": "Monday",
+                "opponent": "BUF",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "NSH",
+        "total": 3,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "TOR",
+                "homeGame": false
+            },
+            {
+                "day": "Thursday",
+                "opponent": "MTL",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "WPG",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "NYI",
+        "total": 2,
+        "games": [
+            {
+                "day": "Thursday",
+                "opponent": "EDM",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "OTT",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "NYR",
+        "total": 4,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "EDM",
+                "homeGame": true
+            },
+            {
+                "day": "Thursday",
+                "opponent": "TOR",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "MTL",
+                "homeGame": false
+            },
+            {
+                "day": "Monday",
+                "opponent": "MIN",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "OTT",
+        "total": 3,
+        "games": [
+            {
+                "day": "Wednesday",
+                "opponent": "BUF",
+                "homeGame": false
+            },
+            {
+                "day": "Thursday",
+                "opponent": "SEA",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "NYI",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "PHI",
+        "total": 3,
+        "games": [
+            {
+                "day": "Thursday",
+                "opponent": "WPG",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "MIN",
+                "homeGame": true
+            },
+            {
+                "day": "Monday",
+                "opponent": "SEA",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "PIT",
+        "total": 3,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "ANA",
+                "homeGame": false
+            },
+            {
+                "day": "Thursday",
+                "opponent": "LAK",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "SJS",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "SEA",
+        "total": 4,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "MTL",
+                "homeGame": false
+            },
+            {
+                "day": "Thursday",
+                "opponent": "OTT",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "TOR",
+                "homeGame": false
+            },
+            {
+                "day": "Monday",
+                "opponent": "PHI",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "STL",
+        "total": 2,
+        "games": [
+            {
+                "day": "Wednesday",
+                "opponent": "CHI",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "DAL",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "TOR",
+        "total": 3,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "NSH",
+                "homeGame": true
+            },
+            {
+                "day": "Thursday",
+                "opponent": "NYR",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "SEA",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "UTA",
+        "total": 3,
+        "games": [
+            {
+                "day": "Wednesday",
+                "opponent": "CGY",
+                "homeGame": true
+            },
+            {
+                "day": "Friday",
+                "opponent": "SJS",
+                "homeGame": true
+            },
+            {
+                "day": "Sunday",
+                "opponent": "BOS",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "VAN",
+        "total": 3,
+        "games": [
+            {
+                "day": "Thursday",
+                "opponent": "DAL",
+                "homeGame": false
+            },
+            {
+                "day": "Friday",
+                "opponent": "CHI",
+                "homeGame": false
+            },
+            {
+                "day": "Sunday",
+                "opponent": "WSH",
+                "homeGame": false
+            }
+        ]
+    },
+    {
+        "team": "VGK",
+        "total": 4,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "CGY",
+                "homeGame": false
+            },
+            {
+                "day": "Thursday",
+                "opponent": "BOS",
+                "homeGame": true
+            },
+            {
+                "day": "Saturday",
+                "opponent": "CGY",
+                "homeGame": true
+            },
+            {
+                "day": "Monday",
+                "opponent": "CAR",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "WSH",
+        "total": 3,
+        "games": [
+            {
+                "day": "Tuesday",
+                "opponent": "TBL",
+                "homeGame": true
+            },
+            {
+                "day": "Friday",
+                "opponent": "MIN",
+                "homeGame": true
+            },
+            {
+                "day": "Sunday",
+                "opponent": "VAN",
+                "homeGame": true
+            }
+        ]
+    },
+    {
+        "team": "WPG",
+        "total": 3,
+        "games": [
+            {
+                "day": "Thursday",
+                "opponent": "PHI",
+                "homeGame": false
+            },
+            {
+                "day": "Saturday",
+                "opponent": "NSH",
+                "homeGame": true
+            },
+            {
+                "day": "Monday",
+                "opponent": "CGY",
+                "homeGame": false
+            }
+        ]
+    }
+]

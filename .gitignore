@@ -1,0 +1,54 @@
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+.env/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.egg-info/
+*.egg
+dist/
+build/
+pip-wheel-metadata/
+*.spec
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- VSCode ---
+.vscode/
+.history/
+
+# --- Environment / Secrets ---
+*.env
+*.ini
+*.cfg
+*.local
+oauth2.json
+smtprecoverycode.txt
+
+# --- Logs ---
+*.log
+
+# --- OS Files ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Tools ---
+.mypy_cache/
+.pytest_cache/
+coverage.xml
+htmlcov/
