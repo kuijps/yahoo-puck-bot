@@ -47,32 +47,11 @@ def get_myteam(lg):
   
 
 def get_Roster(team):
-    # get team roster and make it look nicer
-    # Prepare data for tabulate
-    # table = [
-    #     [
-    #         p['name'],
-    #         p['selected_position'],
-    #         ', '.join(p['eligible_positions']),
-    #         p['status']
-    #     ]
-    #     for p in players
-    # ]
 
-    # print("Team Roster:" )
     players = team.roster()
     return players
 
-
-def main():
-    lg = get_league()
-    tms = lg.teams()
-
-    # Get current date and time and create filename with timestamp
-    now = datetime.datetime.now()
-    timestamp = now.strftime("%Y-%m-%d_%H-%M")
-
-
+def get_ir_cheese(lg,tms,timestamp):
     with open('data/IR-Cheese.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         # Write header row
@@ -93,62 +72,21 @@ def main():
                         timestamp
                     ])  
                 else:
-                    print(f"{player['name']} is correctly placed in {player['selected_position']} and status is {player['status']}")    
+                    print(f"{player['name']} is correctly placed in {player['selected_position']} and status is {player['status']}")
+
+def main():
+    # get the yahoo league and teams in league
+    lg = get_league()
+    tms = lg.teams()
+
+    # Get current date and time and create filename with timestamp
+    now = datetime.datetime.now()
+    timestamp = now.strftime("%Y-%m-%d_%H-%M")
+
+    get_ir_cheese(lg,tms,timestamp)
+
+       
     
-   
 
-
-        # print(f"Roster for team {team_key}:")
-        # print(tabulate(roster_table, headers=['Name', 'Selected', 'Eligible', 'Status']))
-        # print("\n")
-
-    # use this line later for reporting team names
-    # print("Team keys and names:")
-    # for k, v in tms.items():
-         #print(f"{k}: {v['name']}")
-        
-
-
-
-    # myteam = get_team(lg)
-    
-    # # get team roster and make it look nicer
-    # players = team.roster()
-    # # Prepare data for tabulate
-    # table = [
-    #     [
-    #         p['name'],
-    #         p['selected_position'],
-    #         ', '.join(p['eligible_positions']),
-    #         p['status']
-    #     ]
-    #     for p in players
-    # ]
-
-    # print("Team Roster:" )
-    # print(tabulate(table, headers=['Name', 'Selected', 'Eligible', 'Status']))
-
-    # # Find players who are NOT in 'IR' but are in 'IR+'
-    # ir_plus_players = [
-    #     p for p in players
-    # if p['selected_position'] == 'IR+' and 'IR+' not in p['eligible_positions']
-    # ]
-
-    # if ir_plus_players:
-    #     print("\nPlayers in IR+ that are not eligible!:")
-    #     print(tabulate(
-    #         [
-    #             [
-    #                 p['name'],
-    #                 p['selected_position'],
-    #                 ', '.join(p['eligible_positions']),
-    #                 p['status']
-    #             ]
-    #             for p in ir_plus_players
-    #         ],
-    #         headers=['Name', 'Selected', 'Eligible', 'Status']
-    #     ))
-    # else:
-    #     print("\All players in IR+ are eligible.")
 if __name__ == "__main__": 
     main()
