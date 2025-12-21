@@ -3,15 +3,14 @@ from yahoo_oauth import OAuth2
 import yahoo_fantasy_api as yfa
 import json
 from tabulate import tabulate
+from config import LEAGUE_ID
+from config import LOG_PATH
 import csv
 import datetime
 import os
 
-# Global Variables
-league_id = "465.l.34586"
 
-log_path = '/root/yahoo-puckBot/data/log'
-os.makedirs(log_path, exist_ok=True)
+os.makedirs(LOG_PATH, exist_ok=True)
 
 
 # Set up logging
@@ -19,7 +18,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s:%(message)s',
     #filename='data/log/puckBot.log',      # Log file in project folder
-    filename=os.path.join(log_path, 'puckBot.log'),
+    filename=os.path.join(LOG_PATH, 'puckBot.log'),
     filemode='a'                   # Append to the log file
 )
 logger = logging.getLogger(__name__)
@@ -36,7 +35,7 @@ def get_league():
     #exit()
    
     # get the league object
-    lg = gm.to_league(league_id)
+    lg = gm.to_league(LEAGUE_ID)
     return lg
 
 def get_myteam(lg):
