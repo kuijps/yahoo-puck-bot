@@ -1,17 +1,31 @@
 import requests
 import json
 from nhlTeamCodes import NHL_TEAM_CODES
-from datetime import datetime
+from datetime import datetime, timedelta
 import csv
-
 
 schedule_data = []
 
+def get_week_start_and_end(date=None):
+    if date is None:
+        date = datetime.today()
+
+    # monday = 0 , sunday = 6
+
+    start_of_week = date - timedelta(days=date.weekday())
+    end_of_week = start_of_week + timedelta(days=6)    
+
+    return start_of_week.strftime("%Y-%m-%d"), end_of_week.strftime("%Y-%m-%d")
+
+
 def generate_games_per_day():
 
+    weekStart, weekEnd = get_week_start_and_end()    
+  
+    
     week_info = {
-        "weekStart": "2025-10-13",
-        "weekEnd": "2025-10-19",
+        "weekStart": weekStart,
+        "weekEnd": weekEnd,
         "weekTotal": 0
     }
 
@@ -80,61 +94,54 @@ def get_day_of_week(date):
     return day_of_week
 
 
-def get_team_schedule(team, date):
-    global schedule_data  # ✅ This tells Python to use the global variable
+def get_team_schedule(thisTeam, date):
+    global schedule_data  # This tells Python to use the global variable
 
     
-    # url = f"https://api-web.nhle.com//v1/club-schedule/{team}/week/{date}"
-    url = f"https://api-web.nhle.com//v1/club-schedule/{team}/week/now"
+    url = f"https://api-web.nhle.com//v1/club-schedule/{thisTeam}/week/{date}"
+    # url = f"https://api-web.nhle.com//v1/club-schedule/{team}/week/now"
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
-        # prints all json data
-        #print(json.dumps(data, indent=2))
+       
         total_games = len(data['games'])
-        # print(f"Team: {team} ({total_games} games)")
+        
         team_info = {
-            "team": team, 
+            "team": thisTeam, 
             "total": total_games, 
             "games": []
         }
-           
+        # loops through all the games this team has this week and sets its details.
         for game in data['games']:
-            if game['homeTeam']['abbrev'] == team:
+
+            if game['homeTeam']['abbrev'] == thisTeam: # checks to see if this team is home team to set the homegame boolean
                 game_info = {
-                    "day": get_day_of_week(game['gameDate']),
+                    "day": get_day_of_week(game['gameDate']), 
                     "opponent": game['awayTeam']['abbrev'],
                     "homeGame": True
                 }
-                #print(f"   {get_day_of_week(game['gameDate'])} vs {game['awayTeam']['abbrev']}")
             else:
                 game_info = {
                     "day": get_day_of_week(game['gameDate']),
                     "opponent": game['homeTeam']['abbrev'],
                     "homeGame": False
                 }
-                #print(f"   {get_day_of_week(game['gameDate'])} at {game['homeTeam']['abbrev']}")
+                
             team_info["games"].append(game_info)
     
         schedule_data.append(team_info)
         
     
         
-        
-        
-
-
-# def main():
-#     for team_code in NHL_TEAM_CODES.values():
-#         get_team_schedule(team_code, "2025-10-13")
-    
-#     generate_games_per_day()     
-        
 def main():
     global schedule_data
+    
+    # getting the bounds of the current week to pass to get_team_schedule
+    weekStart, weekEnd = get_week_start_and_end()
+    
     # Collect all team schedules first
     for team_code in NHL_TEAM_CODES.values():
-        get_team_schedule(team_code, "2025-10-15")
+        get_team_schedule(team_code, weekStart)
     
     # Now write the complete schedule_data to schedule.json once
     with open("data/schedule.json", "w") as f:

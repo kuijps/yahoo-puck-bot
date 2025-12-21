@@ -1,14 +1,14 @@
 {
-    "weekStart": "2025-10-13",
-    "weekEnd": "2025-10-19",
-    "weekTotal": 49,
+    "weekStart": "2025-12-15",
+    "weekEnd": "2025-12-21",
+    "weekTotal": 56,
     "gamesPerDay": {
         "Monday": 5,
-        "Tuesday": 8,
-        "Wednesday": 4,
-        "Thursday": 11,
-        "Friday": 4,
+        "Tuesday": 10,
+        "Wednesday": 5,
+        "Thursday": 9,
+        "Friday": 5,
         "Saturday": 13,
-        "Sunday": 4
+        "Sunday": 9
     }
 }
