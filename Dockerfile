@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.12-slim
 
 # Create a directory inside the container
 WORKDIR /app
@@ -10,5 +10,5 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run your app
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
 
