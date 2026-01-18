@@ -13,7 +13,7 @@ NHL_TEAM_CODES = {
     "Detroit": "DET",
     "Edmonton": "EDM",
     "Florida": "FLA",
-    "Los Angeles": "LA",
+    "Los Angeles": "LAK",
     "Minnesota": "MIN",
     "Montreal": "MTL",
     "Nashville": "NSH",

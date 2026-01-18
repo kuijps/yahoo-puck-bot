@@ -8,6 +8,9 @@ from config import LOG_PATH
 import csv
 import datetime
 import os
+from analysis.offday_analysis import analyze_offday_value
+from nhlSchedule import get_weekly_schedule
+from nhlSchedule import generate_games_per_day
 
 
 os.makedirs(LOG_PATH, exist_ok=True)
@@ -73,6 +76,46 @@ def get_ir_cheese(lg,tms,timestamp):
                 else:
                     print(f"{player['name']} is correctly placed in {player['selected_position']} and status is {player['status']}")
 
+def get_best_free_agents():
+    
+    '''
+    
+    generate_games_per_day()
+
+    with open("data/week_info.json") as f:
+        weekinfo = json.load(f)
+
+    #print(weekinfo)
+    '''
+    schedule = get_weekly_schedule()
+    weekinfo = generate_games_per_day(schedule)
+    
+    analysis = analyze_offday_value(weekinfo, schedule)
+
+    print(json.dumps(analysis, indent=4))
+    
+    # create offday top availablility teams csv report
+    with(open('data/offday_analysis.csv', 'w', newline='') as csvfile):
+        writer = csv.writer(csvfile)
+        # Write header row
+        writer.writerow(['Team', 'Offday Games', 'Total Games'])
+
+        for entry in analysis['rankedTeams']:
+            writer.writerow([entry["team"], entry["offdayGames"], entry["totalGames"]])
+
+    # create offdays csv report
+    with(open('data/offdays.csv', 'w', newline='') as csvfile):
+        writer = csv.writer(csvfile)
+        # Write header row
+        writer.writerow(['Off Days'])
+
+        for day in analysis['offDays']:
+            writer.writerow([day])
+
+
+
+
+
 def main():
     # get the yahoo league and teams in league
     lg = get_league()
@@ -83,8 +126,9 @@ def main():
     timestamp = now.strftime("%Y-%m-%d_%H-%M")
 
     get_ir_cheese(lg,tms,timestamp)
-
-       
+    
+    get_best_free_agents()
+      
     
 
 if __name__ == "__main__": 
