@@ -30,11 +30,15 @@ pip-wheel-metadata/
 *.ini
 *.cfg
 *.local
-oauth2.json
-smtprecoverycode.txt
+secrets/oauth2.json
+secrets/smtprecoverycode.txt
 
 # --- Logs ---
 *.log
+
+#folders
+data/*
+
 
 # --- OS Files ---
 # macOS
@@ -52,3 +56,4 @@ Desktop.ini
 .pytest_cache/
 coverage.xml
 htmlcov/
+
