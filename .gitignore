@@ -52,3 +52,6 @@ Desktop.ini
 .pytest_cache/
 coverage.xml
 htmlcov/
+
+# --- Other ---
+data/
