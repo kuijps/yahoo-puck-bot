@@ -38,6 +38,7 @@ secrets/smtprecoverycode.txt
 
 #folders
 data/*
+!data/.gitkeep
 
 
 # --- OS Files ---
