@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 def get_league():
     #connect to yahoo api
-    sc = OAuth2(None, None, from_file='data/oauth2.json')
+    sc = OAuth2(None, None, from_file='secrets/oauth2.json')
     logger.info("Connected to Yahoo API")
     #get game object 
     gm = yfa.Game(sc, 'nhl')
