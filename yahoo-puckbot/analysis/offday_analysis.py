@@ -12,8 +12,6 @@ def get_off_days(weekinfo):
 
     return off_days
 
-
-
 def count_offday_games(schedule, off_days):
     """
     schedule: list of team entries from schedule.json

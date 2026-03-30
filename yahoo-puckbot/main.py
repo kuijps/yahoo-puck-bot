@@ -2,7 +2,6 @@ import logging
 from yahoo_oauth import OAuth2
 import yahoo_fantasy_api as yfa
 import json
-from tabulate import tabulate
 from config import LEAGUE_ID
 from config import LOG_PATH
 import csv
