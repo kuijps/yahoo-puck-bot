@@ -56,7 +56,7 @@ def generate_games_per_day(sd):
 
     # Save week_info to a separate file or handle as needed
     print("Saving week_info.json...")
-    with open("data/week_info.json", "w") as f:
+    with open(str(WEEK_INFO_FILE), "w") as f:
         json.dump(week_info, f, indent=4)
     print("Saved week_info.json!")
                 
