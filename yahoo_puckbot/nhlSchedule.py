@@ -1,6 +1,7 @@
 import requests
 import json
 from yahoo_puckbot.nhlTeamCodes import NHL_TEAM_CODES
+from yahoo_puckbot.paths import SECRETS_PATH, LOG_DIR, DATA_DIR, IR_CHEESE_FILE, GAMES_PER_DAY_FILE, LOG_FILE, OFFDAY_ANALYSIS_FILE, OFFDAYS_FILE, WEEK_INFO_FILE, SCHEDULE_FILE, SCHEDULE_DATA_FILE
 from datetime import datetime, timedelta
 import csv
 
@@ -70,11 +71,11 @@ def generate_games_per_day(sd):
 
 def convert_json_to_csv(json_data):
     # load the JSON data
-    with open("data/schedule.json", "r") as f:
+    with open(str(WEEK_INFO_FILE), "r") as f:
         data = json.load(f)
 
     # Open CSV for writing
-    with open("data/schedule.csv", "w", newline="") as f:
+    with open(str(SCHEDULE_FILE), "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["team", "day", "opponent", "homeGame"])
         writer.writeheader()
 
@@ -155,7 +156,7 @@ def main():
         get_team_schedule(team_code, weekStart)
     
     # Now write the complete schedule_data to schedule.json once
-    with open("data/schedule.json", "w") as f:
+    with open(str(SCHEDULE_DATA_FILE), "w") as f:
         json.dump(schedule_data, f, indent=4)
     
     # Now convert to CSV
