@@ -30,15 +30,15 @@ pip-wheel-metadata/
 *.ini
 *.cfg
 *.local
-secrets/oauth2.json
-secrets/smtprecoverycode.txt
+yahoo_puckbot/secrets/oauth2.json
+yahoo_puckbot/secrets/smtprecoverycode.txt
 
 # --- Logs ---
 *.log
 
 #folders
-data/*
-!data/.gitkeep
+yahoo_puckbot/data/*
+!yahoo_puckbot/data/.gitkeep
 
 
 # --- OS Files ---
