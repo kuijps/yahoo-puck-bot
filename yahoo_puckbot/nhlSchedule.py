@@ -60,7 +60,7 @@ def generate_games_per_day(sd):
         json.dump(week_info, f, indent=4)
     print("Saved week_info.json!")
                 
-    with open('data/games_per_day.csv', 'w', newline='') as csvfile:
+    with open(str(GAMES_PER_DAY_FILE), 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['Day', 'Number of Games'])
         for day, count in games_per_day.items():
