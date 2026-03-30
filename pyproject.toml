@@ -1,0 +1,14 @@
+[project]
+name = "yahoo-puckbot"
+version = "0.1.0"
+description = "hobby project"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+puckbot = "yahoo_puckbot.main:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

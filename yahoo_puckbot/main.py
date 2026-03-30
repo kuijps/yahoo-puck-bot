@@ -1,33 +1,35 @@
-import logging
 from yahoo_oauth import OAuth2
+from yahoo_puckbot.config import LEAGUE_ID, LOG_PATH
+from yahoo_puckbot.analysis.offday_analysis import analyze_offday_value
+from yahoo_puckbot.nhlSchedule import get_weekly_schedule, generate_games_per_day
+import logging
 import yahoo_fantasy_api as yfa
 import json
-from config import LEAGUE_ID
-from config import LOG_PATH
 import csv
 import datetime
 import os
-from analysis.offday_analysis import analyze_offday_value
-from nhlSchedule import get_weekly_schedule
-from nhlSchedule import generate_games_per_day
+from pathlib import Path
 
+# __file__ gives you the path to yahoo_puckbot/main.py, so we can use that to build paths to other files in the project
+PACKAGE_ROOT = Path(__file__).resolve().parent
+SECRETS_PATH = PACKAGE_ROOT / "secrets" / "oauth2.json"
 
-os.makedirs(LOG_PATH, exist_ok=True)
+LOG_DIR = PACKAGE_ROOT / "data" / "log"
+LOG_DIR.mkdir(parents=True, exist_ok=True)
 
+LOG_FILE = LOG_DIR / "puckbot.log"
 
-# Set up logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s:%(message)s',
-    #filename='data/log/puckBot.log',      # Log file in project folder
-    filename=os.path.join(LOG_PATH, 'puckBot.log'),
-    filemode='a'                   # Append to the log file
+    filename=str(LOG_FILE),
+    filemode="a"
 )
 logger = logging.getLogger(__name__)
 
 def get_league():
     #connect to yahoo api
-    sc = OAuth2(None, None, from_file='secrets/oauth2.json')
+    sc = OAuth2(None, None, from_file=str(SECRETS_PATH))
     logger.info("Connected to Yahoo API")
     #get game object 
     gm = yfa.Game(sc, 'nhl')

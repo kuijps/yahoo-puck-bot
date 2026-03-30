@@ -1,6 +1,6 @@
 import requests
 import json
-from nhlTeamCodes import NHL_TEAM_CODES
+from yahoo_puckbot.nhlTeamCodes import NHL_TEAM_CODES
 from datetime import datetime, timedelta
 import csv
 

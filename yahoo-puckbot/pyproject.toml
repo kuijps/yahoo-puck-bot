@@ -1,7 +1,0 @@
-[project]
-name = "yahoo-puckbot"
-version = "0.1.0"
-
-[project.scripts]
-puckbot = "yahoo_puckbot.main:main"
-
