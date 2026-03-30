@@ -2,6 +2,7 @@ from yahoo_oauth import OAuth2
 from yahoo_puckbot.config import LEAGUE_ID, LOG_PATH
 from yahoo_puckbot.analysis.offday_analysis import analyze_offday_value
 from yahoo_puckbot.nhlSchedule import get_weekly_schedule, generate_games_per_day
+from yahoo_puckbot.paths import SECRETS_PATH, LOG_DIR, DATA_DIR, IR_CHEESE_FILE, GAMES_PER_DAY_FILE, LOG_FILE, OFFDAY_ANALYSIS_FILE, OFFDAYS_FILE
 import logging
 import yahoo_fantasy_api as yfa
 import json
@@ -9,15 +10,6 @@ import csv
 import datetime
 import os
 from pathlib import Path
-
-# __file__ gives you the path to yahoo_puckbot/main.py, so we can use that to build paths to other files in the project
-PACKAGE_ROOT = Path(__file__).resolve().parent
-SECRETS_PATH = PACKAGE_ROOT / "secrets" / "oauth2.json"
-
-LOG_DIR = PACKAGE_ROOT / "data" / "log"
-LOG_DIR.mkdir(parents=True, exist_ok=True)
-
-LOG_FILE = LOG_DIR / "puckbot.log"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -55,7 +47,7 @@ def get_Roster(team):
     return players
 
 def get_ir_cheese(lg,tms,timestamp):
-    with open('data/IR-Cheese.csv', 'w', newline='') as csvfile:
+    with open(str(IR_CHEESE_FILE), 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         # Write header row
         writer.writerow(['Team Name', 'Player Name', 'Selected Position', 'Eligible Positions', 'Status','Date'])
@@ -96,7 +88,7 @@ def get_best_free_agents():
     print(json.dumps(analysis, indent=4))
     
     # create offday top availablility teams csv report
-    with(open('data/offday_analysis.csv', 'w', newline='') as csvfile):
+    with(open(str(OFFDAY_ANALYSIS_FILE), 'w', newline='') as csvfile):
         writer = csv.writer(csvfile)
         # Write header row
         writer.writerow(['Team', 'Offday Games', 'Total Games'])
@@ -105,7 +97,7 @@ def get_best_free_agents():
             writer.writerow([entry["team"], entry["offdayGames"], entry["totalGames"]])
 
     # create offdays csv report
-    with(open('data/offdays.csv', 'w', newline='') as csvfile):
+    with(open(str(OFFDAYS_FILE), 'w', newline='') as csvfile):
         writer = csv.writer(csvfile)
         # Write header row
         writer.writerow(['Off Days'])
