@@ -34,3 +34,11 @@ NHL_TEAM_CODES = {
     "Washington": "WSH",
     "Winnipeg": "WPG"
 }
+
+NHL_CODE_TO_TEAM = {code: team for team, code in NHL_TEAM_CODES.items()}
+
+def get_team_code(team_name):
+    return NHL_TEAM_CODES.get(team_name)
+
+def get_team_name(team_code):
+    return NHL_CODE_TO_TEAM.get(team_code)  
